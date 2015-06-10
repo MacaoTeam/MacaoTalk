@@ -17,20 +17,23 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class RootController implements Initializable {
+
 	@FXML
 	private Button loginBtn;
 	@FXML
 	private Button signUpBtn;
+	
 	private Stage primaryStage;
 
+	
 	public void setPrimaryStage(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 	}
 
+	
 	public void initialize(URL location, ResourceBundle resource) {
 
 		signUpBtn.setOnAction(new EventHandler<ActionEvent>() {
-
 			@Override
 			public void handle(ActionEvent event) {
 				handlesignUpBtnAction(event);
@@ -43,6 +46,7 @@ public class RootController implements Initializable {
 				handleloginBtnAction(event);
 			}
 		});
+
 	}
 
 	public void handleloginBtnAction(ActionEvent event) {
@@ -60,22 +64,7 @@ public class RootController implements Initializable {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-//		System.out.println("로그인 버튼 클릭");
-//		Stage dialog2 = new Stage(StageStyle.DECORATED);
-//		dialog2.initModality(Modality.WINDOW_MODAL);
-//		dialog2.initOwner(primaryStage);
-//		Parent parent;
-//		try {
-//			parent = FXMLLoader.load(getClass().getResource("StandBy.fxml"));
-//			Scene scene = new Scene(parent);
-//			dialog2.setScene(scene);
-//			dialog2.setResizable(false);
-//			dialog2.show();
-//		} catch (IOException e) {
-//			System.out.println("예외처리 되었음");
-//			e.printStackTrace();
-//		}
+	
 
 	}
 
@@ -94,6 +83,5 @@ public class RootController implements Initializable {
 			e.printStackTrace();
 		}
 
-		System.out.println("회원가입 버튼 클릭");
 	}
 }

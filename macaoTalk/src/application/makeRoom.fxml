@@ -9,27 +9,36 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="273.0" prefWidth="439.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
-   <children>
-      <Label layoutX="179.0" layoutY="29.0" text="방 만들기">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="59.0" layoutY="68.0" text="방 제목" />
-      <Label layoutX="53.0" layoutY="102.0" text="제한인원" />
-      <Label layoutX="53.0" layoutY="134.0" text="공개여부" />
-      <Label layoutX="256.0" layoutY="134.0" text="비밀번호" />
-      <TextField fx:id="roomTitleTxt" layoutX="107.0" layoutY="64.0" prefHeight="23.0" prefWidth="288.0" />
-      <TextField fx:id="roomPwTxt" layoutX="311.0" layoutY="130.0" prefHeight="23.0" prefWidth="84.0" />
-      <ComboBox fx:id="limitUserCombo" layoutX="107.0" layoutY="98.0" prefHeight="23.0" prefWidth="59.0" visibleRowCount="5">
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-      </ComboBox>
-      <RadioButton fx:id="publicRBtn" layoutX="107.0" layoutY="134.0" mnemonicParsing="false" text="공개" />
-      <RadioButton fx:id="privateRBtn" layoutX="161.0" layoutY="134.0" mnemonicParsing="false" text="비공개" />
-      <Button fx:id="submitBtn" layoutX="152.0" layoutY="204.0" mnemonicParsing="false" text="완료" />
-      <Button fx:id="cancelBtn" layoutX="236.0" layoutY="204.0" mnemonicParsing="false" text="취소" />
-   </children>
+<AnchorPane prefHeight="273.0" prefWidth="439.0"
+	xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8"
+	fx:controller="application.makeRoomController">
+	<children>
+		<Label layoutX="179.0" layoutY="29.0" text="방 만들기">
+			<font>
+				<Font size="18.0" />
+			</font>
+		</Label>
+		<Label layoutX="59.0" layoutY="68.0" text="방 제목" />
+		<Label layoutX="53.0" layoutY="102.0" text="제한인원" />
+		<Label layoutX="53.0" layoutY="134.0" text="공개여부" />
+		<Label layoutX="256.0" layoutY="134.0" text="비밀번호" />
+		<TextField fx:id="roomTitleTxt" layoutX="107.0" layoutY="64.0"
+			prefHeight="23.0" prefWidth="288.0" />
+		<TextField fx:id="roomPwTxt" layoutX="311.0" layoutY="130.0"
+			prefHeight="23.0" prefWidth="84.0" />
+		<ComboBox fx:id="limitUserCombo" layoutX="107.0" layoutY="98.0"
+			prefHeight="23.0" prefWidth="59.0" visibleRowCount="5">
+			<opaqueInsets>
+				<Insets />
+			</opaqueInsets>
+		</ComboBox>
+		<RadioButton fx:id="publicRBtn" layoutX="107.0" layoutY="134.0"
+			mnemonicParsing="false" text="공개" />
+		<RadioButton fx:id="privateRBtn" layoutX="161.0" layoutY="134.0"
+			mnemonicParsing="false" text="비공개" />
+		<Button fx:id="submitBtn" layoutX="152.0" layoutY="204.0"
+			mnemonicParsing="false" text="완료" />
+		<Button fx:id="cancelBtn" layoutX="236.0" layoutY="204.0"
+			mnemonicParsing="false" text="취소" />
+	</children>
 </AnchorPane>
