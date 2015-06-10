@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity"
+	minHeight="-Infinity" minWidth="-Infinity" prefHeight="288.0"
+	prefWidth="440.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller = "application.RootController">
+	<children>
+		<Button fx:id="loginBtn" layoutX="314.0" layoutY="102.0"
+			mnemonicParsing="false" prefHeight="84.0" prefWidth="104.0" text="Login" />
+		<Button fx:id="signUpBtn" layoutX="121.0" layoutY="219.0"
+			mnemonicParsing="false" prefHeight="33.0" prefWidth="198.0" text="회원가입" />
+		<PasswordField fx:id="pwTextField" layoutX="147.0"
+			layoutY="163.0" promptText="비밀번호 입력해주세요" />
+		<TextField fx:id="idTextField" layoutX="147.0" layoutY="103.0"
+			promptText="아이디 입력해주세요" />
+		<Label layoutX="57.0" layoutY="107.0" text="아이디" />
+		<Label layoutX="57.0" layoutY="167.0" text="비밀번호" />
+		<Label layoutX="53.0" layoutY="14.0" text="Macao Talk">
+			<font>
+				<Font size="60.0" />
+			</font>
+		</Label>
+	</children>
+</AnchorPane>
