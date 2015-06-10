@@ -23,7 +23,12 @@ public class StandByController implements Initializable {
 	@FXML
 	private Button roomJoinBtn;
 	@FXML
+	private Button idSearchBtn;
+	@FXML
+	private Button userInfoChangeBtn;
+	@FXML
 	private Stage primaryStage;
+	
 
 	public void setPrimaryStage(Stage primaryStage) {
 		this.primaryStage = primaryStage;
@@ -46,11 +51,24 @@ public class StandByController implements Initializable {
 				handleroomJoinBtnAction(event);
 			}
 		});
+		
+		idSearchBtn.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				handleidSearchBtnAction(event);
+			}
+		});
+		
+		userInfoChangeBtn.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				handleuserInfoChangeBtnAction(event);
+			}
+		});
 	}
 
 	public void handleroomMakeBtnAction(ActionEvent event) {
 
-		// Stage primaryStage = (Stage) .getScene().getWindow();
 		Stage dialog = new Stage(StageStyle.DECORATED);
 		dialog.initModality(Modality.WINDOW_MODAL);
 		dialog.initOwner(primaryStage);
@@ -64,7 +82,7 @@ public class StandByController implements Initializable {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
+	 
 	}
 
 	public void handleroomJoinBtnAction(ActionEvent event) {
@@ -83,4 +101,39 @@ public class StandByController implements Initializable {
 		}
 
 	}
+
+	public void handleidSearchBtnAction(ActionEvent event) {
+		Stage dialog = new Stage(StageStyle.DECORATED);
+		dialog.initModality(Modality.WINDOW_MODAL);
+		dialog.initOwner(primaryStage);
+		Parent parent;
+		try {
+			parent = FXMLLoader.load(getClass().getResource("idSearch.fxml"));
+			Scene scene = new Scene(parent);
+			dialog.setScene(scene);
+			dialog.setResizable(false);
+			dialog.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+	
+	public void handleuserInfoChangeBtnAction(ActionEvent event) {
+		Stage dialog = new Stage(StageStyle.DECORATED);
+		dialog.initModality(Modality.WINDOW_MODAL);
+		dialog.initOwner(primaryStage);
+		Parent parent;
+		try {
+			parent = FXMLLoader.load(getClass().getResource("ModifySignUp.fxml"));
+			Scene scene = new Scene(parent);
+			dialog.setScene(scene);
+			dialog.setResizable(false);
+			dialog.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+	
 }

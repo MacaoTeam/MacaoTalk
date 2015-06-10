@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
@@ -23,8 +22,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
-import com.my.service.ConnectionDB;
 
 public class RootController implements Initializable {
 	@FXML
@@ -79,6 +76,17 @@ public class RootController implements Initializable {
 		String password = "1q2w3e";
 		Connection con = null;
 		Statement stmt = null;
+		
+		
+		//
+		
+		
+		Stage dialog = new Stage(StageStyle.DECORATED);
+		dialog.initModality(Modality.WINDOW_MODAL);
+		dialog.initOwner(primaryStage);
+		Parent parent;
+	
+		
 		try {
 			con = DriverManager.getConnection(url, user, password);
 			String id = idTxt.getText();
@@ -98,6 +106,22 @@ public class RootController implements Initializable {
 					resultLabel.setText("Login 성공");
 					System.out.println("login Success");
 					showDialog("StandBy.fxml");
+					//  로그인 성공 시, 로그인화면창 종료
+					try {
+						parent = FXMLLoader.load(getClass().getResource("StandBy.fxml"));
+						Scene scene = new Scene(parent);
+						dialog.setScene(scene);
+						dialog.setResizable(false);
+						primaryStage.hide();
+						dialog.show();
+						
+						
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+
+			
+					
 				} else {
 					resultLabel.setVisible(true);
 					resultLabel.setText("ID 또는 Password 오류!");
@@ -129,7 +153,9 @@ public class RootController implements Initializable {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			
 		}
+	
 
 	}
 

@@ -27,9 +27,7 @@
 		<TextField fx:id="roomPwTxt" layoutX="311.0" layoutY="130.0"
 			prefHeight="23.0" prefWidth="84.0" />
 		<ComboBox fx:id="limitUserCombo" layoutX="107.0" layoutY="98.0"
-			prefHeight="23.0" prefWidth="59.0" visibleRowCount="5" />
-
-
+			prefHeight="23.0" prefWidth="59.0" />
 		<RadioButton fx:id="publicRBtn" layoutX="107.0" layoutY="134.0"
 			mnemonicParsing="false" text="공개" />
 		<RadioButton fx:id="privateRBtn" layoutX="161.0" layoutY="134.0"
