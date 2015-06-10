@@ -7,20 +7,21 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+	
+	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
 			
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("Main.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("Main.fxml"));			
 			Parent root = (Parent) loader.load();
 			RootController controller = loader.getController();
 			controller.setPrimaryStage(primaryStage);
-			
 			Scene scene = new Scene(root);
-			primaryStage.setTitle("채팅프로그램");
+			primaryStage.setTitle("MacaoTalk");
 			primaryStage.setScene(scene);
 			primaryStage.show();
-
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -28,5 +29,6 @@ public class Main extends Application {
 
 	public static void main(String[] args) {
 		launch(args);
+		
 	}
 }

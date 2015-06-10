@@ -5,19 +5,29 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="395.0" prefWidth="558.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.makeRoomController">
+<AnchorPane prefHeight="395.0" prefWidth="558.0"
+	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="application.makeRoomController">
 	<children>
-		<TextArea fx:id="outputTextArea" layoutX="25.0" layoutY="53.0" prefHeight="247.0" prefWidth="329.0" />
-		<TableView fx:id="participantTV" editable="true" layoutX="384.0" layoutY="33.0" prefHeight="262.0" prefWidth="136.0">
+		<TextArea fx:id="outputTextArea" layoutX="25.0" layoutY="53.0"
+			prefHeight="247.0" prefWidth="329.0" />
+		<TableView fx:id="participantTV" editable="true" layoutX="384.0"
+			layoutY="33.0" prefHeight="262.0" prefWidth="136.0">
 			<columns>
 				<TableColumn fx:id="nickName" prefWidth="94.0" text="대화명" />
-				<TableColumn fx:id="gender" maxWidth="41.0" prefWidth="41.0" text="성별" />
+				<TableColumn fx:id="gender" maxWidth="41.0" prefWidth="41.0"
+					text="성별" />
 			</columns>
 		</TableView>
-		<TextArea fx:id="inputTextArea" layoutX="25.0" layoutY="323.0" prefHeight="22.0" prefWidth="287.0" />
-		<Button fx:id="inputBtn" layoutX="314.0" layoutY="323.0" mnemonicParsing="false" text="입력" />
-		<Label fx:id="titleLabel" layoutX="25.0" layoutY="26.0" prefHeight="15.0" prefWidth="329.0" text="방제목 라벨" />
-		<Button fx:id="reportBtn" layoutX="393.0" layoutY="323.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="40.0" />
-		<Button fx:id="roomOutBtn" layoutX="452.0" layoutY="323.0" mnemonicParsing="false" text="방 나가기" />
+		<TextArea fx:id="inputTextArea" layoutX="25.0" layoutY="323.0"
+			prefHeight="22.0" prefWidth="287.0" />
+		<Button fx:id="inputBtn" layoutX="314.0" layoutY="323.0"
+			mnemonicParsing="false" text="입력" />
+		<Label fx:id="titleLabel" layoutX="25.0" layoutY="26.0"
+			prefHeight="15.0" prefWidth="329.0" text="방제목 라벨" />
+		<Button fx:id="reportBtn" layoutX="393.0" layoutY="323.0"
+			mnemonicParsing="false" prefHeight="23.0" prefWidth="40.0" />
+		<Button fx:id="roomOutBtn" layoutX="452.0" layoutY="323.0"
+			mnemonicParsing="false" text="방 나가기" />
 	</children>
 </AnchorPane>
