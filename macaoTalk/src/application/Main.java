@@ -19,7 +19,7 @@ public class Main extends Application {
 			primaryStage.setTitle("채팅프로그램");
 			primaryStage.setScene(scene);
 			primaryStage.show();
-			//primaryStage.setEchoChar('*');
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

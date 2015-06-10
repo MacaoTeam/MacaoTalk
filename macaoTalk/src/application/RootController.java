@@ -23,32 +23,60 @@ public class RootController implements Initializable {
 	private Button signUpBtn;
 	private Stage primaryStage;
 
-	public void initialize(URL location, ResourceBundle resource) {
-		loginBtn.setOnAction(new EventHandler<ActionEvent>() {
+	public void setPrimaryStage(Stage primaryStage) {
+		this.primaryStage = primaryStage;
+	}
 
-			@Override
-			public void handle(ActionEvent event) {
-				// TODO Auto-generated method stub
-				handleloginBtnAction(event);
-			}
-		});
+	public void initialize(URL location, ResourceBundle resource) {
 
 		signUpBtn.setOnAction(new EventHandler<ActionEvent>() {
 
 			@Override
 			public void handle(ActionEvent event) {
-				// TODO Auto-generated method stub
 				handlesignUpBtnAction(event);
+			}
+		});
+
+		loginBtn.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				handleloginBtnAction(event);
 			}
 		});
 	}
 
-	public void setPrimaryStage(Stage primaryStage) {
-		this.primaryStage = primaryStage;
-	}
-
 	public void handleloginBtnAction(ActionEvent event) {
-		System.out.println("로그인 버튼 클릭");
+		
+		Stage dialog = new Stage(StageStyle.DECORATED);
+		dialog.initModality(Modality.WINDOW_MODAL);
+		dialog.initOwner(primaryStage);
+		Parent parent;
+		try {
+			parent = FXMLLoader.load(getClass().getResource("StandBy.fxml"));
+			Scene scene = new Scene(parent);
+			dialog.setScene(scene);
+			dialog.setResizable(false);
+			dialog.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+//		System.out.println("로그인 버튼 클릭");
+//		Stage dialog2 = new Stage(StageStyle.DECORATED);
+//		dialog2.initModality(Modality.WINDOW_MODAL);
+//		dialog2.initOwner(primaryStage);
+//		Parent parent;
+//		try {
+//			parent = FXMLLoader.load(getClass().getResource("StandBy.fxml"));
+//			Scene scene = new Scene(parent);
+//			dialog2.setScene(scene);
+//			dialog2.setResizable(false);
+//			dialog2.show();
+//		} catch (IOException e) {
+//			System.out.println("예외처리 되었음");
+//			e.printStackTrace();
+//		}
+
 	}
 
 	public void handlesignUpBtnAction(ActionEvent event) {
@@ -63,10 +91,9 @@ public class RootController implements Initializable {
 			dialog.setResizable(false);
 			dialog.show();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		System.out.println("회원가입 버튼 클릭");
 	}
 }

@@ -5,32 +5,44 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="500.0" prefWidth="658.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Button fx:id="roomMakeBtn" layoutX="35.0" layoutY="430.0" mnemonicParsing="false" text="방만들기" />
-      <Button fx:id="userInfoChangeBtn" layoutX="420.0" layoutY="443.0" mnemonicParsing="false" text="회원정보 수정" />
-      <Button fx:id="idSearchBtn" layoutX="599.0" layoutY="395.0" mnemonicParsing="false" text="검색" />
-      <Button fx:id="roomJoinBtn" layoutX="128.0" layoutY="430.0" mnemonicParsing="false" text="입장하기" />
-      <Button fx:id="roomInfoBtn" layoutX="219.0" layoutY="430.0" mnemonicParsing="false" text="방 정보보기" />
-      <Button fx:id="exitBtn" layoutX="539.0" layoutY="443.0" mnemonicParsing="false" text="프로그램 종료" />
-      <Label layoutX="407.0" layoutY="399.0" text="ID 검색" />
-      <TextField fx:id="idSearchTxt" layoutX="455.0" layoutY="395.0" />
-      <TableView fx:id="roomTV" layoutX="9.0" layoutY="35.0" prefHeight="350.0" prefWidth="376.0">
-        <columns>
-          <TableColumn fx:id="roomNo" prefWidth="39.0" text="번호" />
-          <TableColumn fx:id="roomName" prefWidth="144.0" text="제목" />
-            <TableColumn fx:id="roomMaker" prefWidth="63.0" text="방장" />
-            <TableColumn fx:id="memberCount" prefWidth="54.0" text="인원수" />
-            <TableColumn fx:id="public_private" prefWidth="75.0" text="공개/비공개" />
-        </columns>
-      </TableView>
-      <TableView fx:id="waitUserTV" layoutX="405.0" layoutY="35.0" prefHeight="329.0" prefWidth="211.0">
-        <columns>
-          <TableColumn fx:id="nickName" prefWidth="144.0" text="대화명" />
-            <TableColumn fx:id="gender" prefWidth="66.0" text="성별" />
-        </columns>
-      </TableView>
-      <Label layoutX="35.0" layoutY="14.0" text="대기방" />
-      <Label layoutX="407.0" layoutY="14.0" text="대기자" />
-   </children>
+<AnchorPane prefHeight="500.0" prefWidth="658.0"
+	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="application.StandByController"
+	>
+	<children>
+		<Button fx:id="roomMakeBtn" layoutX="35.0" layoutY="430.0"
+			mnemonicParsing="false" text="방만들기" />
+		<Button fx:id="userInfoChangeBtn" layoutX="420.0" layoutY="443.0"
+			mnemonicParsing="false" text="회원정보 수정" />
+		<Button fx:id="idSearchBtn" layoutX="599.0" layoutY="395.0"
+			mnemonicParsing="false" text="검색" />
+		<Button fx:id="roomJoinBtn" layoutX="128.0" layoutY="430.0"
+			mnemonicParsing="false" text="입장하기" />
+		<Button fx:id="roomInfoBtn" layoutX="219.0" layoutY="430.0"
+			mnemonicParsing="false" text="방 정보보기" />
+		<Button fx:id="exitBtn" layoutX="539.0" layoutY="443.0"
+			mnemonicParsing="false" text="프로그램 종료" />
+		<Label layoutX="407.0" layoutY="399.0" text="ID 검색" />
+		<TextField fx:id="idSearchTxt" layoutX="455.0" layoutY="395.0" />
+		<TableView fx:id="roomTV" layoutX="9.0" layoutY="35.0"
+			prefHeight="350.0" prefWidth="376.0">
+			<columns>
+				<TableColumn fx:id="roomNo" prefWidth="39.0" text="번호" />
+				<TableColumn fx:id="roomName" prefWidth="144.0" text="제목" />
+				<TableColumn fx:id="roomMaker" prefWidth="63.0" text="방장" />
+				<TableColumn fx:id="memberCount" prefWidth="54.0" text="인원수" />
+				<TableColumn fx:id="public_private" prefWidth="75.0"
+					text="공개/비공개" />
+			</columns>
+		</TableView>
+		<TableView fx:id="waitUserTV" layoutX="405.0" layoutY="35.0"
+			prefHeight="329.0" prefWidth="211.0">
+			<columns>
+				<TableColumn fx:id="nickName" prefWidth="144.0" text="대화명" />
+				<TableColumn fx:id="gender" prefWidth="66.0" text="성별" />
+			</columns>
+		</TableView>
+		<Label layoutX="35.0" layoutY="14.0" text="대기방" />
+		<Label layoutX="407.0" layoutY="14.0" text="대기자" />
+	</children>
 </AnchorPane>
