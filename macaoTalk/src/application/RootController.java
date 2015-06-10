@@ -40,7 +40,7 @@ public class RootController implements Initializable {
 
 	private Stage primaryStage;
 
-	static{
+	static {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (ClassNotFoundException e) {
@@ -48,6 +48,7 @@ public class RootController implements Initializable {
 			e.printStackTrace();
 		}
 	}
+
 	public void setPrimaryStage(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 	}
@@ -72,9 +73,7 @@ public class RootController implements Initializable {
 	}
 
 	public void handleloginBtnAction(ActionEvent event) {
-	
-		
-		
+
 		String url = "jdbc:oracle:thin:@124.137.8.45:1521:XE";
 		String user = "maccao";
 		String password = "1q2w3e";
@@ -88,25 +87,24 @@ public class RootController implements Initializable {
 			// ConnectionDB cdb = new ConnectionDB();
 			if (!(id.equals("") || password.equals(""))) {
 				// 아이디 또는 비밀번호를 입력했을 때
-				String selectSQL = "SELECT * FROM users WHERE id='" + id + "'" + " AND U_PW='"
-						+ user_password + "'";
+				String selectSQL = "SELECT * FROM users WHERE id='" + id + "'"
+						+ " AND U_PW='" + user_password + "'";
 
 				stmt = con.createStatement();
 				// stmt = cdb.getCon().createStatement();
 				int cnt = stmt.executeUpdate(selectSQL);
 				System.out.println("id = " + id + " " + "pw= " + user_password);
 				if (cnt == 1) {
+					resultLabel.setText("Login 성공");
 					System.out.println("login Success");
 					showDialog("StandBy.fxml");
-				}
-				else {
+				} else {
 					resultLabel.setVisible(true);
 					resultLabel.setText("ID 또는 Password 오류!");
-					//System.out.println("ID 또는 Password 오류");
+					// System.out.println("ID 또는 Password 오류");
 				}
 
-			}
-			else {// 아이디 또는 비밀번호를 입력하지 않았을 때
+			} else {// 아이디 또는 비밀번호를 입력하지 않았을 때
 				resultLabel.setVisible(true);
 				resultLabel.setText("id 또는 비밀번호를 잘못 입력했습니다.");
 			}
