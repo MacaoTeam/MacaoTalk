@@ -18,19 +18,17 @@ import javafx.stage.StageStyle;
 
 public class RootController implements Initializable {
 
-	@FXML
-	private Button loginBtn;
-	@FXML
-	private Button signUpBtn;
+	@FXML	private Button loginBtn;
+	@FXML	private Button signUpBtn;
+	@FXML	private Stage primaryStage;
+	@FXML	private Button button;
 	
-	private Stage primaryStage;
-
 	
 	public void setPrimaryStage(Stage primaryStage) {
 		this.primaryStage = primaryStage;
 	}
 
-	
+	@Override
 	public void initialize(URL location, ResourceBundle resource) {
 
 		signUpBtn.setOnAction(new EventHandler<ActionEvent>() {
@@ -50,6 +48,7 @@ public class RootController implements Initializable {
 	}
 
 	public void handleloginBtnAction(ActionEvent event) {
+		
 		
 		Stage dialog = new Stage(StageStyle.DECORATED);
 		dialog.initModality(Modality.WINDOW_MODAL);
@@ -83,5 +82,10 @@ public class RootController implements Initializable {
 			e.printStackTrace();
 		}
 
+	}
+
+
+	public void setSecondStage(Stage secondStage) {
+		
 	}
 }

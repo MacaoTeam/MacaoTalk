@@ -17,13 +17,17 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class StandByController implements Initializable {
+
 	@FXML
 	private Button roomMakeBtn;
+	@FXML
+	private Button roomJoinBtn;
+	@FXML
+	private Stage primaryStage;
 
-	private Stage secondStage;
+	public void setPrimaryStage(Stage primaryStage) {
+		this.primaryStage = primaryStage;
 
-	public void setSecondStage(Stage secondStage) {
-		this.secondStage = secondStage;
 	}
 
 	@Override
@@ -35,13 +39,21 @@ public class StandByController implements Initializable {
 				handleroomMakeBtnAction(event);
 			}
 		});
+
+		roomJoinBtn.setOnAction(new EventHandler<ActionEvent>() {
+			@Override
+			public void handle(ActionEvent event) {
+				handleroomJoinBtnAction(event);
+			}
+		});
 	}
 
 	public void handleroomMakeBtnAction(ActionEvent event) {
-		System.out.println("방만들기");
+
+		// Stage primaryStage = (Stage) .getScene().getWindow();
 		Stage dialog = new Stage(StageStyle.DECORATED);
 		dialog.initModality(Modality.WINDOW_MODAL);
-		dialog.initOwner(secondStage);
+		dialog.initOwner(primaryStage);
 		Parent parent;
 		try {
 			parent = FXMLLoader.load(getClass().getResource("makeRoom.fxml"));
@@ -55,4 +67,20 @@ public class StandByController implements Initializable {
 
 	}
 
+	public void handleroomJoinBtnAction(ActionEvent event) {
+		Stage dialog = new Stage(StageStyle.DECORATED);
+		dialog.initModality(Modality.WINDOW_MODAL);
+		dialog.initOwner(primaryStage);
+		Parent parent;
+		try {
+			parent = FXMLLoader.load(getClass().getResource("chatroom.fxml"));
+			Scene scene = new Scene(parent);
+			dialog.setScene(scene);
+			dialog.setResizable(false);
+			dialog.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
 }

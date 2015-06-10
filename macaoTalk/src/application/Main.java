@@ -10,11 +10,12 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
+			
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("Main.fxml"));
-			// Parent root = FXMLLoader.load(getClass().getResource("javaFxmlTest.fxml"));
 			Parent root = (Parent) loader.load();
 			RootController controller = loader.getController();
 			controller.setPrimaryStage(primaryStage);
+			
 			Scene scene = new Scene(root);
 			primaryStage.setTitle("채팅프로그램");
 			primaryStage.setScene(scene);
