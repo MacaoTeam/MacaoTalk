@@ -101,13 +101,13 @@ public class RootController implements Initializable {
 				stmt = con.createStatement();
 				// stmt = cdb.getCon().createStatement();
 				int cnt = stmt.executeUpdate(selectSQL);
-				System.out.println("id = " + id + " " + "pw= " + user_password);
+				//System.out.println("id = " + id + " " + "pw= " + user_password);
 				if (cnt == 1) {
 					resultLabel.setText("Login 성공");
 					System.out.println("login Success");
-					showDialog("StandBy.fxml");
+					showDialog("StandBy.fxml", id);
 					//  로그인 성공 시, 로그인화면창 종료
-					try {
+					/*try {
 						parent = FXMLLoader.load(getClass().getResource("StandBy.fxml"));
 						Scene scene = new Scene(parent);
 						dialog.setScene(scene);
@@ -120,7 +120,7 @@ public class RootController implements Initializable {
 						e.printStackTrace();
 					}
 
-			
+*/			
 					
 				} else {
 					resultLabel.setVisible(true);
@@ -180,5 +180,24 @@ public class RootController implements Initializable {
 		}
 
 	}
+	public void showDialog(String fxml, String id) {
+		System.out.println("in showDialog...");
+		Stage dialog = new Stage(StageStyle.DECORATED);
+		dialog.initModality(Modality.WINDOW_MODAL);
+		dialog.initOwner(primaryStage);
+		Parent parent;
+		try {
+			parent = FXMLLoader.load(getClass().getResource(fxml));
+			Scene scene = new Scene(parent);			
+			Label lb = (Label)scene.lookup("#idView");
+			System.out.println("idView:" + lb.getText()+"...");
+			lb.setText(id);
+			dialog.setScene(scene);
+			dialog.setResizable(false);
+			dialog.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
+	}
 }

@@ -43,6 +43,6 @@
 			</columns>
 		</TableView>
 		<Label layoutX="35.0" layoutY="14.0" text="대기방" />
-		<Label layoutX="407.0" layoutY="14.0" text="대기자" />
+		<Label layoutX="407.0"  fx:id="idView" layoutY="14.0" text="대기자" />
 	</children>
 </AnchorPane>
